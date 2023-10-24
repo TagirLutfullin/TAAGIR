@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Изображения</title>
+<style>
+.image {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+}
+</style>
+</head>
+<body>
+<h1>Изображения</h1>
+<div id="imageContainer"></div>
+
+<p id="result"></p>
+
+<p id="result2"></p>
+
+<p id="result3"></p>
+<script>
+    const imgs = [
+    'https://donnarosa.by/upload/iblock/b16/processed-_1_.jpeg',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-q5vWOxTF0aBWh3eoSQw5A-L1KWoh8Ond91ZaCUg&s',
+    'https://tsvetomania.ru/upload/medialibrary/467/pc5uc1mozzd20oalmr0aq6kc2wwlo6f3/2.png',
+    'https://www.lotlike.ru/upload/iblock/656/101-roza-miks.jpg',
+    'https://flowwow.com/data/blog/1562599250_29351868.jpg',
+    'https://img.freepik.com/free-photo/beautiful-flowers-bouquet_23-2149053790.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698105600&semt=sph'
+    ];
+
+    for (let i = 0; i < imgs.length; i++) {
+        const img = document.createElement("img");
+        img.src = imgs[i];
+        img.classList.add("image");
+        document.getElementById("imageContainer").appendChild(img);
+    }
+    
+
+
+    let sumFor = 0;
+    for (let i = 1; i <= 10; i++) {
+        sumFor += i;
+    }
+    let sumWhile = 0;
+    let j = 1;
+    while (j <= 10) {
+        sumWhile += j;
+        j++;
+    }
+    let sumDoWhile = 0;
+    let k = 1;
+    do {
+        sumDoWhile += k;
+        k++;
+    } while (k <= 10);
+    document.getElementById("result").innerHTML = "for: " + sumFor + "<br>while: " + sumWhile + "<br>do while: " + sumDoWhile;
+
+
+
+
+
+    for (let i = 1; i <= 7; i++) {
+        let stars = '';
+        for (let j = 1; j <= i; j++) {
+        stars += '*';
+        }
+        document.write(stars + '<br>'); 
+    }
+
+
+
+
+
+    const arr1 = [1,2,3,4,5];
+    let product = 1;
+    for (let i = 0; i < arr1.length; i++) {
+        product *= arr1[i];
+    }
+    document.getElementById("result2").innerHTML = "Произведение элементов массива: " + product;
+
+
+
+
+
+    const arr = [1, 2, 5, 9, 4, 13, 4, 10];
+    let found = false;
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] === 4) {
+            found = true;
+            document.getElementById("result3").innerHTML = 'Есть!';
+            break;
+        }
+    }
+    if (!found) {
+        document.getElementById("result3").innerHTML = 'Нет такого элемента.';
+    }
+
+</script>
+</body>
+</html>
